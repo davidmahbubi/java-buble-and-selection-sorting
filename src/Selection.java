@@ -1,13 +1,18 @@
 public class Selection {
-    public void sort(int[] a) {
+    public void sort(int[] a, int sortType) {
 
         long startTime = System.currentTimeMillis();
 
         for (int i = a.length - 1; i >= 1; i--) {
             int largestIndex = i;
             for (int j = 0; j < i; j++) {
-                if (a[j] > a[largestIndex])
-                    largestIndex = j;
+                if (sortType == 1) {
+                    if (a[j] > a[largestIndex])
+                        largestIndex = j;
+                } else {
+                    if (a[j] < a[largestIndex])
+                        largestIndex = j;
+                }
             }
             swap(a, i, largestIndex);
         }

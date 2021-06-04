@@ -6,8 +6,9 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan panjang array : ");
-
         int len = sc.nextInt();
+        System.out.print("Masukkan tipe pengurutan\n1. Ascending\n2. Descending\ninput : ");
+        int sortType = sc.nextInt();
         int[] data = arrayGenerator(len);
 
         System.out.println();
@@ -30,7 +31,7 @@ public class Main {
         System.out.println("==============================================================");
         System.out.println("Buble sort : ");
         System.out.println("--------------------------------------------------------------");
-        bubble.sort(data);
+        bubble.sort(data, sortType);
         System.out.println("==============================================================");
 
         System.out.println();
@@ -38,7 +39,7 @@ public class Main {
         System.out.println("==============================================================");
         System.out.println("Selection sort : ");
         System.out.println("--------------------------------------------------------------");
-        selection.sort(data);
+        selection.sort(data, sortType);
         System.out.println("==============================================================");
     }
 
